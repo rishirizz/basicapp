@@ -40,3 +40,33 @@ class SharedService {
     prefs.remove('login_details');
   }
 }
+
+/* FETCH PHOTOS */
+
+Future fetchPhotos() async {
+  Uri url = Uri.parse('https://jsonplaceholder.typicode.com/photos/');
+  final response = await http.get(url);
+  if (response.statusCode == 200) {
+    print("response.body");
+    print(json.decode(response.body));
+    // print("--------------------------------------");
+    return json.decode(response.body);
+  } else {
+    throw Exception('Failed to load data!');
+  }
+}
+
+/* FETCH POSTS */
+
+Future fetchPosts() async {
+  Uri url = Uri.parse('https://jsonplaceholder.typicode.com/posts/');
+  final response = await http.get(url);
+  if (response.statusCode == 200) {
+    print("response.body");
+    print(json.decode(response.body));
+    // print("--------------------------------------");
+    return json.decode(response.body);
+  } else {
+    throw Exception('Failed to load data!');
+  }
+}
