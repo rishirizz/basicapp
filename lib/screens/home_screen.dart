@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             iconTheme: IconThemeData(color: Colors.black),
             backgroundColor: Color(0xffffffff),
             title: Text(
-              'EXPENSES',
+              'HOME',
               style: appBarTitleStyle,
             ),
           ),

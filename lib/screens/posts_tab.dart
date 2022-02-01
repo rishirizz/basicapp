@@ -26,15 +26,6 @@ class _PostsTabState extends State<PostsTab> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('HOME'),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Icon(Icons.home),
-            ),
-          ],
-        ),
         body: ListView.builder(
           itemCount: postsAlbum!.length,
           itemBuilder: (BuildContext context, int index) => Padding(
@@ -46,14 +37,10 @@ class _PostsTabState extends State<PostsTab> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.network(
-                      postsAlbum![index]['url'],
-                      height: 100,
-                      width: 100,
-                    ),
-                    Text(postsAlbum![index]['albumId'].toString()),
+                    Text(postsAlbum![index]['userId'].toString()),
                     Text(postsAlbum![index]['id'].toString()),
                     Text(postsAlbum![index]['title'].toString()),
+                    Text(postsAlbum![index]['body'].toString()),
                   ],
                 ),
               ),

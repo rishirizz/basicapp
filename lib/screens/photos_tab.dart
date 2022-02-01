@@ -15,8 +15,8 @@ class _PhotosTabState extends State<PhotosTab> {
     fetchPhotos().then((photos) {
       setState(() {
         photoAlbums = photos;
-        print('PHOTOALBUMS ===> $photoAlbums');
-        print(photoAlbums![0]['title']);
+        // print('PHOTOALBUMS ===> $photoAlbums');
+        // print(photoAlbums![0]['title']);
       });
     });
     super.initState();
@@ -26,15 +26,6 @@ class _PhotosTabState extends State<PhotosTab> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('HOME'),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Icon(Icons.home),
-            ),
-          ],
-        ),
         body: ListView.builder(
           itemCount: photoAlbums!.length,
           itemBuilder: (BuildContext context, int index) => Padding(
