@@ -100,12 +100,49 @@ class _HomeScreenState extends State<HomeScreen> {
                                           placeholder: kTransparentImage,
                                           image: photoAlbums![index]['url'],
                                         ),
-                                        Text(photoAlbums![index]['albumId']
-                                            .toString()),
-                                        Text(photoAlbums![index]['id']
-                                            .toString()),
-                                        Text(photoAlbums![index]['title']
-                                            .toString()),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  'Album ID : ',
+                                                  style: cardHeaderTextStyle,
+                                                ),
+                                                Text(
+                                                  photoAlbums![index]['albumId']
+                                                      .toString(),
+                                                  style: cardPrimaryTextStyle,
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  'ID : ',
+                                                  style: cardHeaderTextStyle,
+                                                ),
+                                                Text(
+                                                  photoAlbums![index]['id']
+                                                      .toString(),
+                                                  style: cardPrimaryTextStyle,
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Divider(
+                                          color: Colors.purple.shade200,
+                                        ),
+                                        Text(
+                                          photoAlbums![index]['title']
+                                              .toString(),
+                                          style: cardSecondaryTextStyle,
+                                        ),
                                       ],
                                     ),
                                   ),
