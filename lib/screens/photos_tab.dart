@@ -1,5 +1,6 @@
 import 'package:basicapp/services/api_service.dart';
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class PhotosTab extends StatefulWidget {
   const PhotosTab({Key? key}) : super(key: key);
@@ -37,11 +38,9 @@ class _PhotosTabState extends State<PhotosTab> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.network(
-                      photoAlbums![index]['url'],
-                      // height: 100,
-                      // width: 100,
-                      width: double.infinity,
+                    FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: photoAlbums![index]['url'],
                     ),
                     Text(photoAlbums![index]['albumId'].toString()),
                     Text(photoAlbums![index]['id'].toString()),
