@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   bool isLoggenIn = await SharedService.isLoggedIn();
   if (isLoggenIn) {
-    _defaultScreen = PhotosTab();
+    _defaultScreen = HomeScreen();
   }
   runApp(BasicApp());
 }
