@@ -1,6 +1,5 @@
 import 'package:basicapp/screens/dashBoard_screen.dart';
 import 'package:basicapp/screens/home_screen.dart';
-import 'package:basicapp/screens/photos_tab.dart';
 import 'package:basicapp/screens/login_screen.dart';
 import 'package:basicapp/services/api_service.dart';
 import 'package:flutter/material.dart';

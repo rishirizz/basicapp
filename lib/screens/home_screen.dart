@@ -1,6 +1,4 @@
 import 'package:basicapp/constants/textStyles.dart';
-import 'package:basicapp/screens/photos_tab.dart';
-import 'package:basicapp/screens/posts_tab.dart';
 import 'package:basicapp/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -44,6 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           // drawer: (isSmallDevice(context)) ? NavigationDrawer() : null,
           appBar: AppBar(
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Icon(Icons.home),
+              ),
+            ],
             iconTheme: IconThemeData(color: Colors.black),
             backgroundColor: Color(0xffffffff),
             title: Text(
@@ -57,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     TabBar(
+                      indicatorColor: Colors.purple,
                       isScrollable: true,
                       tabs: [
                         Tab(
@@ -77,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: TabBarView(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: ListView.builder(
                               itemCount: photoAlbums!.length,
                               itemBuilder: (BuildContext context, int index) =>
@@ -110,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           /////////////////////////////////
                           Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: ListView.builder(
                               physics: BouncingScrollPhysics(),
                               itemCount: postsAlbum!.length,
@@ -157,7 +162,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                           ],
                                         ),
-                                        Divider(),
+                                        Divider(
+                                          color: Colors.purple.shade200,
+                                        ),
                                         Text(
                                           postsAlbum![index]['title']
                                               .toString(),
