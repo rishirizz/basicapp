@@ -96,9 +96,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        FadeInImage.memoryNetwork(
-                                          placeholder: kTransparentImage,
-                                          image: photoAlbums![index]['url'],
+                                        Container(
+                                          height: 300,
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: FadeInImage.memoryNetwork(
+                                            placeholder: kTransparentImage,
+                                            image: photoAlbums![index]['url'],
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                         SizedBox(
                                           height: 10,
