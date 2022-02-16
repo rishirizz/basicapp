@@ -14,6 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool expenseContents = true;
   List? photoAlbums = [];
   List? postsAlbum = [];
+  int _index = 0;
 
   @override
   void initState() {
@@ -83,8 +84,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(10.0),
-                            child: ListView.builder(
+                            child: PageView.builder(
                               itemCount: photoAlbums!.length,
+                              scrollDirection: Axis.vertical,
+                              controller: PageController(viewportFraction: 0.8),
+                              onPageChanged: (int index) =>
+                                  setState(() => _index = index),
                               itemBuilder: (BuildContext context, int index) =>
                                   Padding(
                                 padding: const EdgeInsets.all(8.0),
