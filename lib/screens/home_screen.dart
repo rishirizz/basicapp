@@ -1,3 +1,4 @@
+import 'package:basicapp/constants/constants.dart';
 import 'package:basicapp/constants/textStyles.dart';
 import 'package:basicapp/services/api_service.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List? photoAlbums = [];
   List? postsAlbum = [];
   int _index = 0;
+  int? cardCount;
 
   @override
   void initState() {
@@ -28,8 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
     fetchPosts().then((posts) {
       setState(() {
         postsAlbum = posts;
-        print('PHOTOALBUMS ===> $postsAlbum');
-        print(postsAlbum![0]['title']);
+        // print('PHOTOALBUMS ===> $postsAlbum');
+        // print(postsAlbum![0]['title']);
       });
     });
     super.initState();
@@ -37,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print('WIDTH IS =====> ${MediaQuery.of(context).size.width}');
     return SafeArea(
       child: DefaultTabController(
         length: 2,
@@ -84,12 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(10.0),
-                            child: PageView.builder(
+                            child: ListView.builder(
                               itemCount: photoAlbums!.length,
-                              scrollDirection: Axis.vertical,
-                              controller: PageController(viewportFraction: 0.8),
-                              onPageChanged: (int index) =>
-                                  setState(() => _index = index),
                               itemBuilder: (BuildContext context, int index) =>
                                   Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -101,18 +100,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Container(
-                                          height: 300,
+                                        FadeInImage.memoryNetwork(
+                                          placeholder: kTransparentImage,
+                                          image: photoAlbums![index]['url'],
+                                          fit: BoxFit.cover,
+                                          height: getHeight(),
                                           width:
                                               MediaQuery.of(context).size.width,
-                                          child: FadeInImage.memoryNetwork(
-                                            placeholder: kTransparentImage,
-                                            image: photoAlbums![index]['url'],
-                                            fit: BoxFit.cover,
-                                          ),
                                         ),
                                         SizedBox(
-                                          height: 10,
+                                          height: 15,
                                         ),
                                         Row(
                                           mainAxisAlignment:
@@ -244,5 +241,17 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+
+  double getHeight() {
+    cardCount = getColumnCount(context);
+    if (cardCount == 4)
+      return 360;
+    else if (cardCount == 3)
+      return 280;
+    else if (cardCount == 2)
+      return 250;
+    else
+      return 210;
   }
 }
