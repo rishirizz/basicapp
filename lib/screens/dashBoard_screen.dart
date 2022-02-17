@@ -1,3 +1,4 @@
+import 'package:basicapp/components/nav_drawer.dart';
 import 'package:flutter/material.dart';
 
 class DashBoardScreen extends StatefulWidget {
@@ -10,6 +11,10 @@ class DashBoardScreen extends StatefulWidget {
 class _DashBoardScreenState extends State<DashBoardScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SafeArea(
+      child: Scaffold(
+        drawer: NavigationDrawer(),
+      ),
+    );
   }
 }

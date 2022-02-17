@@ -1,3 +1,4 @@
+import 'package:basicapp/components/nav_drawer.dart';
 import 'package:basicapp/constants/constants.dart';
 import 'package:basicapp/constants/textStyles.dart';
 import 'package:basicapp/services/api_service.dart';
@@ -44,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
+          drawer: NavigationDrawer(),
           // drawer: (isSmallDevice(context)) ? NavigationDrawer() : null,
           appBar: AppBar(
             actions: [
