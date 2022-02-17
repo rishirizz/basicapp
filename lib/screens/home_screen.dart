@@ -1,4 +1,5 @@
 import 'package:basicapp/components/nav_drawer.dart';
+import 'package:basicapp/components/nav_rail.dart';
 import 'package:basicapp/constants/constants.dart';
 import 'package:basicapp/constants/textStyles.dart';
 import 'package:basicapp/services/api_service.dart';
@@ -45,24 +46,27 @@ class _HomeScreenState extends State<HomeScreen> {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
-          drawer: NavigationDrawer(),
+          drawer: (isSmallDevice(context)) ? NavigationDrawer() : null,
           // drawer: (isSmallDevice(context)) ? NavigationDrawer() : null,
-          appBar: AppBar(
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Icon(Icons.home),
-              ),
-            ],
-            iconTheme: IconThemeData(color: Colors.black),
-            backgroundColor: Color(0xffffffff),
-            title: Text(
-              'HOME',
-              style: appBarTitleStyle,
-            ),
-          ),
+          appBar: (isSmallDevice(context))
+              ? AppBar(
+                  actions: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: Icon(Icons.home),
+                    ),
+                  ],
+                  iconTheme: IconThemeData(color: Colors.black),
+                  backgroundColor: Color(0xffffffff),
+                  title: Text(
+                    'HOME',
+                    style: appBarTitleStyle,
+                  ),
+                )
+              : null,
           body: Row(
             children: [
+              if (!isSmallDevice(context)) NavRail(),
               Expanded(
                 child: Column(
                   children: [
