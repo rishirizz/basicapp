@@ -1,6 +1,7 @@
 library globals;
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 const String loginApiPath = 'https://reqres.in/api/login';
 
@@ -20,3 +21,5 @@ int getColumnCount(BuildContext context) {
   else
     return 4;
 }
+
+SharedPreferences? prefs;

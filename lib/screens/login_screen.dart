@@ -2,8 +2,8 @@ import 'package:basicapp/api_models/api_model.dart';
 import 'package:basicapp/constants/progress.dart';
 import 'package:basicapp/constants/validators.dart';
 import 'package:basicapp/services/api_service.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../constants/constants.dart' as global;
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -16,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
   LoginRequestModel? loginRequestModel;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  String? userEmail;
   @override
   void initState() {
     super.initState();
@@ -64,7 +65,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         new TextFormField(
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           keyboardType: TextInputType.emailAddress,
-                          onSaved: (input) => loginRequestModel!.email = input,
+                          onSaved: (input) {
+                            loginRequestModel!.email = input;
+                            global.prefs!.setString('email', input!);
+                            userEmail = input;
+                          },
                           validator: (input) => validateEmail(input),
                           decoration: new InputDecoration(
                             hintText: "Email Address",
