@@ -30,7 +30,7 @@ class _NavRailState extends State<NavRail> {
                   ),
                 ),
                 backgroundColor: Colors.purple[200],
-                selectedIndex: 1,
+                selectedIndex: 0,
                 destinations: [
                   NavigationRailDestination(
                     icon: const Icon(
@@ -59,6 +59,18 @@ class _NavRailState extends State<NavRail> {
                     ),
                   ),
                 ],
+                onDestinationSelected: (index) {
+                  switch (index) {
+                    case 0:
+                      Navigator.pushNamed(context, '/dashboard');
+                      break;
+                    case 1:
+                      Navigator.pushNamed(context, '/home');
+                      break;
+                    default:
+                      Navigator.pushNamed(context, '/dashboard');
+                  }
+                },
               ),
             ),
           ),

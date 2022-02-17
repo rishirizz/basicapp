@@ -17,7 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
   bool expenseContents = true;
   List? photoAlbums = [];
   List? postsAlbum = [];
-  int _index = 0;
   int? cardCount;
 
   @override
