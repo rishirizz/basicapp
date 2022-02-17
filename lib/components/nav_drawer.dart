@@ -11,7 +11,7 @@ class NavigationDrawer extends StatefulWidget {
 }
 
 class _NavigationDrawerState extends State<NavigationDrawer> {
-  String? userEmail = global.prefs!.getString('email');
+  // String? userEmail = global.prefs!.getString('email');
   @override
   void initState() {
     super.initState();
@@ -33,7 +33,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                userEmail!,
+                'userEmail',
                 style: GoogleFonts.getFont(
                   'Roboto',
                   fontWeight: FontWeight.w300,

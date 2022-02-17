@@ -29,7 +29,7 @@ class _NavRailState extends State<NavRail> {
                     ),
                   ),
                 ),
-                backgroundColor: Colors.purple,
+                backgroundColor: Colors.purple[200],
                 selectedIndex: 1,
                 destinations: [
                   NavigationRailDestination(
@@ -38,7 +38,7 @@ class _NavRailState extends State<NavRail> {
                     ),
                     selectedIcon: const Icon(
                       Icons.bar_chart_outlined,
-                      color: Color(0xffff3838),
+                      color: Colors.white,
                     ),
                     label: Text(
                       'DASHBOARD',
@@ -47,11 +47,11 @@ class _NavRailState extends State<NavRail> {
                   ),
                   NavigationRailDestination(
                     icon: const Icon(
-                      Icons.bar_chart_outlined,
+                      Icons.home,
                     ),
                     selectedIcon: const Icon(
-                      Icons.bar_chart_outlined,
-                      color: Color(0xffff3838),
+                      Icons.home,
+                      color: Colors.white,
                     ),
                     label: Text(
                       'HOME',

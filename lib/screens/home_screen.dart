@@ -41,13 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('WIDTH IS =====> ${MediaQuery.of(context).size.width}');
     return SafeArea(
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
           drawer: (isSmallDevice(context)) ? NavigationDrawer() : null,
-          // drawer: (isSmallDevice(context)) ? NavigationDrawer() : null,
           appBar: (isSmallDevice(context))
               ? AppBar(
                   actions: [
