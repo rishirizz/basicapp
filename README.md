@@ -16,6 +16,6 @@ I have used many third party packages which are listed below:
  The app changes its widgets/UI according to the viewports. You can refer to the screenshots folder for the same.
  
  /*
- NOTE: THIS IS A RUDIMENTARY APP JUST FOR SHOWING DATA FETCHED FROM THE INTERNET. THE UI AND OTHER THINGS ARE NOT PRECISE.
+ NOTE: THIS IS A RUDIMENTARY APP JUST FOR SHOWING THE DATA FETCHED FROM THE INTERNET. THE UI AND OTHER THINGS ARE NOT ACCURATE.
  */
   
