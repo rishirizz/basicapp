@@ -12,7 +12,7 @@ I have used many third party packages which are listed below:
   shared_preferences: ^2.0.7,
   google_fonts: ^2.2.0,
   transparent_image: ^2.0.0 AND
-  package_info_plus: ^1.3.1
+  package_info_plus: ^1.3.1.
  The app changes its widgets/UI according to the viewports. You can refer to the screenshots folder for the same.
  
  /*
