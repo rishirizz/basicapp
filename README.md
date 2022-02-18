@@ -2,7 +2,7 @@
 
 This is an app taking in account for absolute beginners in API requets.
 It has two three screens which are login screen, home screen and the dashboard.
-The api used for logging is 'https://reqres.in/api/login'. The login data is stored in the shared preference so that the users don't have to login again unless they log out.
+The api used for login is 'https://reqres.in/api/login'. The login data is stored in the shared preference so that the users don't have to login again unless they log out.
 The second screen is the DashBoard screen which is just a UI having different widgets.
 The third screen ie; the Home has two tabs, photos and posts and we are simply rendering the data from GET request in these two tabs.
 The api used for these two tabs are 'https://jsonplaceholder.typicode.com/photos/' and 'https://jsonplaceholder.typicode.com/posts/' respectively.
